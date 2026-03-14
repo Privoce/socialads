@@ -126,6 +126,10 @@ body {
 }
 
 /* Buttons */
+a.btn {
+  text-decoration: none;
+}
+
 .btn {
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
