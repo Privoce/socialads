@@ -103,6 +103,10 @@
               <p class="form-desc">填写以下信息后，我们会尽快联系你，帮你匹配合适的大咖。</p>
 
               <form id="lead-form" class="lead-form" novalidate>
+                <p class="referrer-line" id="referrer-line" hidden>
+                  推荐人：<span id="referrer-name"></span>
+                </p>
+
                 <div class="field">
                   <label for="name">姓名</label>
                   <input
@@ -181,6 +185,10 @@
                 大咖AI找到人选后后会联系你！
               </p>
               <dl class="success-summary">
+                <div class="success-row hidden" id="success-referrer-row">
+                  <dt>推荐人</dt>
+                  <dd id="success-referrer">—</dd>
+                </div>
                 <div class="success-row">
                   <dt>姓名</dt>
                   <dd id="success-name">—</dd>
