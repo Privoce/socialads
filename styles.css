@@ -523,6 +523,28 @@ body {
   resize: vertical;
 }
 
+.lead-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 12px 40px 12px 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a5f73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+}
+
+.lead-form select:required:invalid {
+  color: #94a3b8;
+}
+
+.lead-form select option {
+  color: var(--text);
+}
+
 .lead-form input::placeholder,
 .lead-form textarea::placeholder {
   color: #94a3b8;
@@ -532,7 +554,7 @@ body {
 .lead-form select:focus,
 .lead-form textarea:focus {
   outline: none;
-  background: #fff;
+  background-color: #fff;
   border-color: var(--accent-glow);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
