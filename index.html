@@ -1,248 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voce AI Marketing – Hands‑Free Social Growth</title>
+    <title>专业大咖｜填志愿前先聊一次</title>
     <meta
       name="description"
-      content="Voce AI Marketing runs your social ads and content for you – hands‑free AI video creation, campaign setup, targeting, and optimization for small businesses, e‑commerce and agencies."
+      content="填志愿前，先和学这个专业的人聊一次。连接学长学姐和真实从业者，一对一语音/视频咨询。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="ambient" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
     <div class="page">
-      <header class="nav">
-        <div class="nav-left">
-          <img src="assets/logo.png" alt="Voce AI" class="logo-img" width="40" height="40" />
-          <div class="logo-text">
-            <span class="logo-title">Voce AI</span>
-            <span class="logo-subtitle">AI ads creation + campaign optimization engine</span>
-          </div>
+      <header class="header">
+        <div class="brand-wrap">
+          <img src="assets/logo.png" alt="专业大咖" class="brand-logo" width="40" height="40" />
+          <span class="brand">专业大咖</span>
         </div>
-        <nav class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <div class="nav-cta">
-          <a href="https://www.instagram.com/voce.dev.ai" class="btn ghost" target="_blank" rel="noopener">Chat on Instagram</a>
-          <a href="https://calendly.com/hansu-privoce/han-meeting" class="btn primary" target="_blank" rel="noopener">Book Strategy Call</a>
-        </div>
+        <p class="header-tagline">连接学长学姐和真实从业者</p>
       </header>
 
-      <main>
-        <!-- Hero -->
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">DEMOCRATIZING HIGH‑END SOCIAL ADS</p>
-            <h1>High-end ads and targeted campaigns for every business.</h1>
-            <p class="hero-subtitle">Ditch the traditional agency. Stop the DIY grind. Voce AI gives you expert creative, campaign management, and optimization at a fraction of the cost.</p>
-
-            <div class="hero-highlight">
-              <span class="hero-pill">Small businesses · e‑commerce · agencies · service brands</span>
+      <main class="main">
+        <section class="hero" id="hero-section">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              AI 智能匹配 · 首批开放预约
             </div>
 
-            <div class="hero-price-block">
-              <span class="hero-price-badge">The most competitive offering in the market</span>
-              <p class="hero-price">
-                <span class="hero-price-amount">$200</span>
-                <span class="hero-price-term">/ month</span>
-              </p>
-              <p class="hero-price-extra">+ 10% of ad budget · No long contracts. Cancel anytime.</p>
-            </div>
+            <h1 class="hero-title">
+              填志愿前，先和<span class="title-accent">学这个专业</span>的人聊一次。
+            </h1>
+            <p class="hero-subtitle">
+              专业介绍看不出真实差异。我们帮你连接相关专业的学长学姐、毕业生和行业从业者，让你在填志愿前听到真实经历、学习内容和职业路径。
+            </p>
 
-            <div class="hero-actions">
-              <a href="https://www.instagram.com/voce.dev.ai" class="btn primary btn-lg" target="_blank" rel="noopener">Chat on Instagram</a>
-              <a href="https://buy.stripe.com/dRmaEXcqJ1LQdmY4mQ6c01b" class="btn outline btn-lg" target="_blank" rel="noopener">Subscribe</a>
-            </div>
-          </div>
+            <ul class="value-pills">
+              <li class="value-pill">
+                <span class="pill-icon" aria-hidden="true">◆</span>
+                真人经验，不是套话介绍
+              </li>
+              <li class="value-pill">
+                <span class="pill-icon" aria-hidden="true">◆</span>
+                按专业和学校层级匹配
+              </li>
+              <li class="value-pill">
+                <span class="pill-icon" aria-hidden="true">◆</span>
+                一对一语音 / 视频咨询
+              </li>
+            </ul>
 
-          <!-- Visual: autoplay reel from example folder -->
-          <div class="hero-visual">
-            <div class="canvas">
-              <div class="reel-wrap">
-                <video id="reel-a" class="reel-video" muted playsinline></video>
-                <video id="reel-b" class="reel-video" muted playsinline></video>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Services: 3 units -->
-        <section id="services" class="section section-services">
-          <div class="services-header">
-            <h2 class="services-title">Real Expert + AI Tools. We get you results.</h2>
-          </div>
-          <div class="services-grid">
-            <article class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <path d="M3 9h18M9 21V9"/>
-                </svg>
-              </div>
-              <h3 class="service-card-title">Design creative ads</h3>
-              <p class="service-card-desc">We design image & video creative for you at no extra charge.</p>
-            </article>
-            <article class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-              </div>
-              <h3 class="service-card-title">Campaign optimization</h3>
-              <p class="service-card-desc">Test, manage and optimize your campaigns and budget across channels.</p>
-            </article>
-            <article class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 3v18h18"/>
-                  <path d="M18 17V9M13 17V5M8 17v-3"/>
-                </svg>
-              </div>
-              <h3 class="service-card-title">Reporting & Insights</h3>
-              <p class="service-card-desc">Data-driven insights and performance reports so you always know what’s working.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- Pricing -->
-        <section id="pricing" class="section section-pricing">
-          <div class="section-header">
-            <p class="eyebrow">PRICING</p>
-            <h2>Democratizing high-end social ads with Voce AI.</h2>
-            <p class="section-subtitle">Every business deserves agency-grade creative and targeted campaigns—without the agency price tag or the DIY headache. Choose Voce AI.</p>
-          </div>
-
-          <div class="pricing-card">
-            <div class="pricing-main">
-              <span class="pricing-badge">Most competitive in the market</span>
-              <h3>Voce AI Growth Plan</h3>
-              <p class="price">
-                <span class="price-amount">$200</span>
-                <span class="price-term">/ month</span>
-              </p>
-              <p class="price-extra">+ 10% of your monthly ad budget</p>
-              <p class="price-note">Month‑to‑month. Cancel anytime. No agency retainer. No DIY grind.</p>
-
-              <a href="https://buy.stripe.com/dRmaEXcqJ1LQdmY4mQ6c01b" class="btn primary btn-lg full-width" target="_blank" rel="noopener">Subscribe now — $200/month</a>
-            </div>
-
-            <div class="pricing-side">
-              <div class="pricing-side-block">
-                <h4 class="pricing-side-title">What you get</h4>
-                <ul class="pricing-includes">
-                  <li>High-end AI video & image creative for ads & social</li>
-                  <li>Full campaign setup, targeting and optimization</li>
-                  <li>Weekly reporting & insights</li>
-                </ul>
-              </div>
-              <div class="pricing-trust">
-                <div class="pricing-trust-item">
-                  <span class="pricing-trust-label">$0 setup fee</span>
+            <div class="mockup-card" aria-hidden="true">
+              <div class="mockup-header">
+                <div class="mockup-status">
+                  <span class="pulse-dot pulse-dot-sm"></span>
+                  <span class="mockup-title">AI 匹配中</span>
                 </div>
-                <div class="pricing-trust-item">
-                  <span class="pricing-trust-label">Run by MIT team</span>
-                </div>
+                <span class="mockup-chip">实时分析</span>
               </div>
-              <p class="pricing-cta-line">Ditch the agency. Stop DIY. Choose Voce AI.</p>
+              <div class="mockup-progress">
+                <div class="mockup-progress-bar"></div>
+              </div>
+              <ul class="mockup-list">
+                <li class="mockup-row" style="--i: 0">
+                  <span class="mockup-key">意向专业</span>
+                  <span class="mockup-val">计算机 / 金融 / 设计</span>
+                </li>
+                <li class="mockup-row" style="--i: 1">
+                  <span class="mockup-key">学校层级</span>
+                  <span class="mockup-val">211 / 普通一本</span>
+                </li>
+                <li class="mockup-row" style="--i: 2">
+                  <span class="mockup-key">推荐大咖</span>
+                  <span class="mockup-val">学长学姐 + 行业从业者</span>
+                </li>
+                <li class="mockup-row" style="--i: 3">
+                  <span class="mockup-key">咨询目标</span>
+                  <span class="mockup-val">真实课程 · 就业路径 · 行业趋势</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-panel">
+            <div class="form-card glass-card" id="form-card">
+              <div class="form-card-glow" aria-hidden="true"></div>
+              <h2 class="form-title">预约专业大咖咨询</h2>
+              <p class="form-desc">填写以下信息后，我们会尽快联系你，帮你匹配合适的大咖。</p>
+
+              <form id="lead-form" class="lead-form" novalidate>
+                <div class="field">
+                  <label for="name">姓名</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="例如：小明 / 小明妈妈"
+                    required
+                    autocomplete="name"
+                  />
+                  <p class="field-error" data-error-for="name"></p>
+                </div>
+
+                <div class="field">
+                  <label for="contact">联系方式</label>
+                  <input
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    placeholder="微信号或手机号"
+                    required
+                    autocomplete="tel"
+                  />
+                  <p class="field-hint">必须有联系方式，否则无法联系你。</p>
+                  <p class="field-error" data-error-for="contact"></p>
+                </div>
+
+                <div class="field">
+                  <label for="major">意向专业</label>
+                  <input
+                    type="text"
+                    id="major"
+                    name="major"
+                    placeholder="例如：计算机、金融、设计、医学、法学"
+                    required
+                  />
+                  <p class="field-error" data-error-for="major"></p>
+                </div>
+
+                <div class="field">
+                  <label for="schoolLevel">学校层级</label>
+                  <select id="schoolLevel" name="schoolLevel" required>
+                    <option value="">请选择学校层级</option>
+                    <option value="985">985</option>
+                    <option value="211">211</option>
+                    <option value="普通一本">普通一本</option>
+                    <option value="二本">二本</option>
+                    <option value="二本以下">二本以下</option>
+                    <option value="暂不确定">暂不确定</option>
+                  </select>
+                  <p class="field-error" data-error-for="schoolLevel"></p>
+                </div>
+
+                <div class="field">
+                  <label for="note">备注 <span class="optional">选填</span></label>
+                  <textarea
+                    id="note"
+                    name="note"
+                    rows="3"
+                    placeholder="例如：孩子对计算机和金融都感兴趣，但不知道怎么选"
+                  ></textarea>
+                </div>
+
+                <p class="form-submit-error hidden" id="form-submit-error" role="alert"></p>
+
+                <button type="submit" class="btn-submit" id="btn-submit">
+                  <span id="btn-submit-label">提交预约</span>
+                </button>
+              </form>
+            </div>
+
+            <div class="success-card glass-card hidden" id="success-card">
+              <div class="success-icon" aria-hidden="true">✓</div>
+              <h2 class="success-title">预约信息已提交</h2>
+              <p class="success-body">
+                我们会根据你的专业方向和学校层级进行匹配，并通过你留下的联系方式联系你。
+              </p>
+              <dl class="success-summary">
+                <div class="success-row">
+                  <dt>姓名</dt>
+                  <dd id="success-name">—</dd>
+                </div>
+                <div class="success-row">
+                  <dt>意向专业</dt>
+                  <dd id="success-major">—</dd>
+                </div>
+                <div class="success-row">
+                  <dt>学校层级</dt>
+                  <dd id="success-school">—</dd>
+                </div>
+              </dl>
+              <button type="button" class="btn-submit btn-secondary" id="btn-new-lead">
+                继续提交新的预约
+              </button>
             </div>
           </div>
         </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="section section-faq">
-          <div class="section-header">
-            <p class="eyebrow">FAQ</p>
-            <h2>Quick answers.</h2>
-          </div>
-
-          <div class="faq-grid">
-            <details class="faq-item" open>
-              <summary>Which platforms do you support?</summary>
-              <p>Meta, TikTok, YouTube and Google Ads.</p>
-            </details>
-
-            <details class="faq-item">
-              <summary>Is there any long‑term contract?</summary>
-              <p>No. It’s month‑to‑month and you can cancel anytime.</p>
-            </details>
-          </div>
+        <section class="value-section glass-strip" aria-label="价值说明">
+          <p class="value-section-text">
+            专业大咖是由麻省理工学院与纽约大学毕业生团队打造的 AI 产品，将根据你的专业兴趣、分数状况、城市与职业偏好，为你匹配并连接真实专业大咖，在读的学长学姐，相似项目毕业后已就业的从业人员——通过 100 元/30 分钟的一对一语音或视频聊天，让你在填志愿前了解专业背后的真实学习内容、就业路径与行业趋势。
+          </p>
         </section>
       </main>
 
       <footer class="footer">
-        <div class="footer-main">
-          <div class="footer-brand">
-            <img src="assets/logo.png" alt="Voce AI" class="logo-img small" width="32" height="32" />
-            <div>
-              <span class="logo-title">Voce AI Marketing</span>
-              <p>Social ads for every business.</p>
-            </div>
-          </div>
-          <div class="footer-links">
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div class="footer-cta">
-            <a href="https://www.instagram.com/voce.dev.ai" class="btn outline" target="_blank" rel="noopener">Chat on Instagram</a>
-          </div>
-        </div>
-        <div class="footer-meta">
-          <span>© 2026 Privoce, Inc. All rights reserved.</span>
-          <span class="footer-meta-links">
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-          </span>
-        </div>
+        <p class="disclaimer">
+          本服务提供专业认知与职业经验咨询，不替代正式志愿填报服务，也不承诺录取结果。
+        </p>
       </footer>
     </div>
 
-    <script>
-      // Autoplay: 3 videos from /examples, 5s each, crossfade transition
-      const reelSources = [
-        "examples/1.mov",
-        "examples/2.mov",
-        "examples/3.mov",
-        "examples/4.mov",
-      ];
-      const REEL_DURATION_MS = 5000;
-
-      const reelA = document.getElementById("reel-a");
-      const reelB = document.getElementById("reel-b");
-      if (reelA && reelB && reelSources.length > 0) {
-        let currentIndex = 0;
-        let active = reelA;
-
-        const showNext = () => {
-          const nextIndex = (currentIndex + 1) % reelSources.length;
-          const nextVideo = active === reelA ? reelB : reelA;
-          nextVideo.src = reelSources[nextIndex];
-          nextVideo.onloadeddata = () => {
-            nextVideo.play().catch(() => {});
-            active.classList.remove("reel-active");
-            nextVideo.classList.add("reel-active");
-            active = nextVideo;
-            currentIndex = nextIndex;
-          };
-        };
-
-        reelA.src = reelSources[0];
-        reelA.classList.add("reel-active");
-        reelA.play().catch(() => {});
-        currentIndex = 0;
-        setInterval(showNext, REEL_DURATION_MS);
-      }
-    </script>
+    <script src="./script.js"></script>
   </body>
-  </html>
-
+</html>
