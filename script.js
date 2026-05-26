@@ -70,16 +70,33 @@ function slugFromPathname() {
 
   if (!segment || segment.includes(".")) return null;
   if (RESERVED_SLUGS.has(segment.toLowerCase())) return null;
-  return segment;
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return segment;
+  }
 }
 
 function slugFromQuery() {
   const ref = new URLSearchParams(window.location.search).get("ref");
   if (!ref || !ref.trim()) return null;
-  const slug = ref.trim();
+  let slug;
+  try {
+    slug = decodeURIComponent(ref.trim());
+  } catch {
+    slug = ref.trim();
+  }
   if (slug.includes("/") || slug.includes(".")) return null;
   if (RESERVED_SLUGS.has(slug.toLowerCase())) return null;
   return slug;
+}
+
+function persistReferrerSlug(slug) {
+  try {
+    sessionStorage.setItem("referrerSlug", slug);
+  } catch {
+    /* ignore */
+  }
 }
 
 /** slug → 展示名（john → John，mary-lee → Mary Lee） */
@@ -93,13 +110,17 @@ function formatReferrerName(slug) {
 
 /** 初始化推荐人：支持 /john、?ref=john，以及 GitHub Pages 404 回跳 */
 function initReferrer() {
-  let slug = slugFromPathname() || slugFromQuery();
+  let slug = slugFromQuery() || slugFromPathname();
 
   if (!slug) {
-    const stored = sessionStorage.getItem("referrerSlug");
-    if (stored) {
-      slug = stored;
-      sessionStorage.removeItem("referrerSlug");
+    try {
+      const stored = sessionStorage.getItem("referrerSlug");
+      if (stored) {
+        slug = stored;
+        sessionStorage.removeItem("referrerSlug");
+      }
+    } catch {
+      /* ignore */
     }
   }
 
@@ -108,11 +129,16 @@ function initReferrer() {
     return;
   }
 
+  persistReferrerSlug(slug);
   activeReferrer = { slug, name: formatReferrerName(slug) };
 
-  if (window.location.pathname === "/" || window.location.pathname === "") {
-    const nextPath = `/${encodeURIComponent(slug)}`;
-    window.history.replaceState(null, "", nextPath + window.location.search);
+  const cleanPath = `/${encodeURIComponent(slug)}`;
+  const onHome =
+    window.location.pathname === "/" || window.location.pathname === "";
+  const onReferrerPath = window.location.pathname === cleanPath;
+
+  if (onHome || onReferrerPath || window.location.search.includes("ref=")) {
+    window.history.replaceState(null, "", cleanPath);
   }
 }
 

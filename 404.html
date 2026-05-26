@@ -10,9 +10,16 @@
           .split("/")
           .filter(Boolean)[0];
         if (segment && segment.indexOf(".") === -1) {
-          sessionStorage.setItem("referrerSlug", segment);
+          var slug = decodeURIComponent(segment);
+          try {
+            sessionStorage.setItem("referrerSlug", slug);
+          } catch (e) {}
+          location.replace(
+            "/?ref=" + encodeURIComponent(slug) + location.hash
+          );
+        } else {
+          location.replace("/" + location.search + location.hash);
         }
-        location.replace("/" + location.search + location.hash);
       })();
     </script>
   </head>

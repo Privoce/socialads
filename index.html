@@ -16,6 +16,17 @@
     />
     <link rel="icon" href="assets/logo.png" type="image/png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var ref = params.get("ref");
+        if (ref) {
+          try {
+            sessionStorage.setItem("referrerSlug", decodeURIComponent(ref));
+          } catch (e) {}
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="ambient" aria-hidden="true">
