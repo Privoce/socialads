@@ -110,16 +110,33 @@
           <div class="form-panel">
             <div class="form-card glass-card" id="form-card">
               <div class="form-card-glow" aria-hidden="true"></div>
-              <h2 class="form-title">预约专业大咖咨询</h2>
-              <p class="form-desc">填写以下信息后，我们会尽快联系你，帮你匹配合适的大咖。</p>
+              <h2 class="form-title" id="form-title">预约专业大咖咨询</h2>
+              <p class="form-desc" id="form-desc">
+                填写以下信息后，我们会尽快联系你，帮你匹配合适的大咖。
+              </p>
 
               <form id="lead-form" class="lead-form" novalidate>
+                <div class="role-switch" role="radiogroup" aria-label="访客身份">
+                  <label class="role-option">
+                    <input type="radio" name="visitorRole" value="seeker" checked />
+                    <span>我是考生（咨询者）</span>
+                  </label>
+                  <label class="role-option">
+                    <input type="radio" name="visitorRole" value="expert" />
+                    <span>我是大咖</span>
+                  </label>
+                  <label class="role-option">
+                    <input type="radio" name="visitorRole" value="advisor" />
+                    <span>我是高报师</span>
+                  </label>
+                </div>
+
                 <p class="referrer-line" id="referrer-line" hidden>
                   推荐人：<span id="referrer-name"></span>
                 </p>
 
                 <div class="field">
-                  <label for="name">姓名</label>
+                  <label for="name" id="name-label">姓名</label>
                   <input
                     type="text"
                     id="name"
@@ -132,7 +149,7 @@
                 </div>
 
                 <div class="field">
-                  <label for="contact">联系方式</label>
+                  <label for="contact" id="contact-label">联系方式</label>
                   <input
                     type="text"
                     id="contact"
@@ -141,11 +158,11 @@
                     required
                     autocomplete="tel"
                   />
-                  <p class="field-hint">必须有联系方式，否则无法联系你。</p>
+                  <p class="field-hint" id="contact-hint">必须有联系方式，否则无法联系你。</p>
                   <p class="field-error" data-error-for="contact"></p>
                 </div>
 
-                <div class="field">
+                <div class="field role-only role-seeker">
                   <label for="major">意向专业</label>
                   <input
                     type="text"
@@ -157,7 +174,7 @@
                   <p class="field-error" data-error-for="major"></p>
                 </div>
 
-                <div class="field">
+                <div class="field role-only role-seeker">
                   <label for="schoolLevel">学校层级</label>
                   <select id="schoolLevel" name="schoolLevel" required>
                     <option value="">请选择学校层级</option>
@@ -171,7 +188,7 @@
                   <p class="field-error" data-error-for="schoolLevel"></p>
                 </div>
 
-                <div class="field">
+                <div class="field role-only role-seeker">
                   <label for="note">备注 <span class="optional">选填</span></label>
                   <textarea
                     id="note"
@@ -181,10 +198,32 @@
                   ></textarea>
                 </div>
 
+                <div class="field role-only role-expert hidden">
+                  <label for="expertOrg">公司或学校</label>
+                  <input
+                    type="text"
+                    id="expertOrg"
+                    name="expertOrg"
+                    placeholder="例如：字节跳动 / 复旦大学"
+                  />
+                  <p class="field-error" data-error-for="expertOrg"></p>
+                </div>
+
+                <div class="field role-only role-expert hidden">
+                  <label for="expertMajor">专业</label>
+                  <input
+                    type="text"
+                    id="expertMajor"
+                    name="expertMajor"
+                    placeholder="例如：计算机科学与技术"
+                  />
+                  <p class="field-error" data-error-for="expertMajor"></p>
+                </div>
+
                 <p class="form-submit-error hidden" id="form-submit-error" role="alert"></p>
 
                 <button type="submit" class="btn-submit" id="btn-submit">
-                  <span id="btn-submit-label">提交预约</span>
+                  <span id="btn-submit-label">提交信息</span>
                 </button>
               </form>
             </div>
@@ -192,10 +231,12 @@
             <div class="success-card glass-card hidden" id="success-card">
               <div class="success-icon" aria-hidden="true">✓</div>
               <h2 class="success-title">预约信息已提交</h2>
-              <p class="success-body">
-                大咖AI找到人选后后会联系你！
-              </p>
+              <p class="success-body" id="success-body">大咖AI找到人选后后会联系你！</p>
               <dl class="success-summary">
+                <div class="success-row">
+                  <dt>身份</dt>
+                  <dd id="success-role">考生（咨询者）</dd>
+                </div>
                 <div class="success-row hidden" id="success-referrer-row">
                   <dt>推荐人</dt>
                   <dd id="success-referrer">—</dd>
@@ -205,14 +246,21 @@
                   <dd id="success-name">—</dd>
                 </div>
                 <div class="success-row">
-                  <dt>意向专业</dt>
+                  <dt id="success-major-label">意向专业</dt>
                   <dd id="success-major">—</dd>
                 </div>
-                <div class="success-row">
-                  <dt>学校层级</dt>
+                <div class="success-row" id="success-school-row">
+                  <dt id="success-school-label">学校层级</dt>
                   <dd id="success-school">—</dd>
                 </div>
               </dl>
+              <div class="advisor-link-box hidden" id="advisor-link-box">
+                <p class="advisor-link-title">你的专属推荐链接</p>
+                <a id="advisor-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+                <p class="advisor-link-hint">
+                  请分享这个链接，系统会自动按渠道统计，享受 20% 渠道分成。
+                </p>
+              </div>
               <button type="button" class="btn-submit btn-secondary" id="btn-new-lead">
                 继续提交新的预约
               </button>
