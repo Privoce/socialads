@@ -1,6 +1,6 @@
-# socialads
+# 专业大咖
 
-Voce AI Marketing landing page — AI ads creation + campaign optimization. $200/month + 10% ad budget.
+Landing page for 专业大咖 — AI matching for college applicants with mentors and industry professionals.
 
 ## Run locally
 
@@ -8,7 +8,9 @@ Open `index.html` in a browser, or serve the folder (e.g. `npx serve .`).
 
 ## Structure
 
-- `index.html` — Landing page
+- `index.html` — Landing page and lead form
 - `styles.css` — Styles
+- `script.js` — Form validation, role switching, Discord webhook
+- `404.html` — GitHub Pages SPA routing for referral links
 - `assets/` — Logo and images
-- `examples/` — Example video ads (autoplay reel)
+- `CNAME` — Custom domain (`ai.voce.chat`)
