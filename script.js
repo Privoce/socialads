@@ -4,8 +4,8 @@
  */
 
 const STORAGE_KEY = "zhuanye_daka_leads";
-const DISCORD_WEBHOOK_URL =
-  "https://discord.com/api/webhooks/1508682343601279187/1IGucWVSrSKkHKBhuGpr4Y7-Oq02t7cuIE0PMYr6MgW-lxaoFVR-93Iy7ouri_4KUX5e";
+/** Discord webhook disabled — set to a webhook URL to re-enable notifications. */
+const DISCORD_WEBHOOK_URL = "";
 
 const RESERVED_SLUGS = new Set([
   "assets",
@@ -353,6 +353,11 @@ async function sendToDiscord(formData) {
       },
     ],
   };
+
+  if (!DISCORD_WEBHOOK_URL) {
+    console.warn("Discord webhook disabled; skipping notification.");
+    return;
+  }
 
   const res = await fetch(DISCORD_WEBHOOK_URL, {
     method: "POST",
